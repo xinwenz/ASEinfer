@@ -1,8 +1,4 @@
-require("foreach")
-require("doParallel")
-require("iterators")
-
-paraGet <- function(readData,pe=2,model="BetaB") {
+paraGet <- function(readData,paraEnv,model) {
     # check form of the ReadData data.frame, any one of the following conditions should be stictly true.
     if (nRepHy < 6 ){stop("Replicates of Hybrid experiment is not enough to avoid correlated error")}
     dvd <- floor(nRepHy/2)
@@ -46,8 +42,8 @@ paraGet <- function(readData,pe=2,model="BetaB") {
     }
 
 
-    no_cores <- pe  # the number of cores
-    cl <- makeCluster(no_cores)
+    # the number of cores
+    cl <- makeCluster(paraEnv)
     registerDoParallel(cl)# initiate cluster # not for windows users
     ans <- foreach(d=iter(readDataMt,by="row"),
             .combine=rbind,
@@ -84,8 +80,8 @@ paraGet <- function(readData,pe=2,model="BetaB") {
         return(result)
     }
 
-    no_cores <- pe  # the number of cores
-    cl <- makeCluster(no_cores)
+    # the number of cores
+    cl <- makeCluster(paraEnv)
     registerDoParallel(cl)# initiate cluster # not for windows users
     ans <- foreach(d=iter(readDataMt,by="row"),
             .combine=rbind,
