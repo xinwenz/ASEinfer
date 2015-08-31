@@ -1,4 +1,4 @@
-ParaGetB <- function(x) {
+paraGetB <- function(x) {
     expCis <- list(dHy=x[ (1:dvd)*3  ],
                    xHy=x[ (0:(dvd-1))*3 +1 ],
                    nHy=x[ (0:(dvd-1))*3 +1 ] + x[ (0:(dvd-1))*3 +2 ])

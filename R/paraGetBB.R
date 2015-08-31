@@ -1,4 +1,4 @@
-ParaGetBB <- function(x) {
+paraGetBB <- function(x) {
     expCis <- list(dHy=x[ (1:dvd)*3  ],
                     xHy=x[ (0:(dvd-1))*3 +1 ],
                     nHy=x[ (0:(dvd-1))*3 +1 ] + x[ (0:(dvd-1))*3 +2 ])
@@ -33,6 +33,6 @@ ParaGetBB <- function(x) {
 
     c(tmp1["log.ec"],tmp2["log.ec",1],tmp2["log.ec",2],
       tmp3["log.et"],tmp4["log.et",1],tmp4["log.et",2],
-      tmp1["log.rHy"],tmp2["log.rHy",1],tmp2["log.rHy",2]
+      tmp1["log.rHy"],tmp2["log.rHy",1],tmp2["log.rHy",2],
       tmp3["log.rCo"],tmp4["log.rCo",1],tmp4["log.rCo",2])
 }
