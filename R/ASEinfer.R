@@ -9,7 +9,7 @@
 #' @param pe parallel environment, how many threads you want to use. defalt is 3.
 #' @param mdl which model you want to use, the default is:"BetaB", which is a beta-binomial model. Another choise is "B", which is a binomial model.
 #'
-#' @return a dataframe of numbers, each row is the result for each gene, and the collumns are the log of effect of cis/trans and their confidence intervals,log of the over-disperse parameter and the corresponding confidence intervals
+#' @return Return a dataframe of numbers, each row is the result for each gene, and the collumns are the log of effect of cis/trans and their confidence intervals,log of the over-disperse parameter and the corresponding confidence intervals.
 #'
 #' @examples
 #' aseinfer(hyList=list(aspHy01,aspHy02,aspHy03,aspHy04,aspHy05,
