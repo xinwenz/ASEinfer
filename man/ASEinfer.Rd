@@ -20,7 +20,7 @@ aseinfer(hyList, dHy, coList, dCo, pe = 3, mdl = "BetaB")
 \item{mdl}{which model you want to use, the default is:"BetaB", which is a beta-binomial model. Another choise is "B", which is a binomial model.}
 }
 \value{
-a dataframe of numbers, each row is the result for each gene, and the collumns are the log of effect of cis/trans and their confidence intervals,log of the over-disperse parameter and the corresponding confidence intervals
+Return a dataframe of numbers, each row is the result for each gene, and the collumns are the log of effect of cis/trans and their confidence intervals,log of the over-disperse parameter and the corresponding confidence intervals.
 }
 \description{
 Based on allel specif expression results, give out allle expression difference due to cis effect or trans effect.
