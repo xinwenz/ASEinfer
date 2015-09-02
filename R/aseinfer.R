@@ -17,14 +17,14 @@
 #'          dHy = c(1,1.1,1.5,1,1.23,1,1.42,1.27,1.3,1.23),
 #'          coList=list(aspCo17,aspCo18,aspCo19,aspCo20,aspCo21),
 #'          dCo=c(1,1.1,1.5,1,1.2),
-#'          pe=3,model="BetaB")
+#'          pe=3,mdl="BetaB")
 #'
 #' aseinfer(hyList=list(aspHy01,aspHy02,aspHy03,aspHy04,aspHy05,
 #'          aspHy06,aspHy07,aspHy08),
 #'          dHy = c(1,1.1,1.5,1,1.23,1,1.42,1.27),
 #'          coList=list(aspCo17,aspCo18,aspCo19,aspCo20),
 #'          dCo=c(1,1.1,1.5,1),
-#'          pe=3,model="B")
+#'          pe=3,mdl="B")
 #' @export
 aseinfer <- function(hyList,dHy,coList,dCo,pe=3,mdl="BetaB") {
     require("foreach")
