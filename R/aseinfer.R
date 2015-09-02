@@ -42,7 +42,7 @@ aseinfer <- function(hyList,dHy,coList,dCo,pe=3,mdl="BetaB") {
     if (nRepHy < 6 ){stop("Replicates of Hybrid experiment is not enough to avoid correlated error")}
     if (nRepCo <3 ) {stop("Replicates of CO-culture less than 3, not enough to get parameters")}
 
-    df <- formChange(hyList,dHy,coList,dCo)
+    dfdf <- formChange(hyList,dHy,coList,dCo)
     # check form of the ReadData data.frame, any one of the following conditions should be stictly true.
     if (ncol(dfdf) %% 3 != 0 ) {stop("incorrect form of ReadData")}
     if (sum(grepl("hy",names(dfdf) != 3*nRepHy))) {stop("hybrid part of ReadData has incorrect number of columns")}
