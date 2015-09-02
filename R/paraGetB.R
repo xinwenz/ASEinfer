@@ -1,8 +1,4 @@
 paraGetB <- function(x) {
-    expCis <- list(dHy=x[ (1:dvd)*3  ],
-                   xHy=x[ (0:(dvd-1))*3 +1 ],
-                   nHy=x[ (0:(dvd-1))*3 +1 ] + x[ (0:(dvd-1))*3 +2 ])
-
     expAll <- list(dCo= x[(nRepHy+1):nRep * 3],
                    dHy=x[(dvd+1):nRepHy *3 ],
                    xCo=x[nRepHy:(nRep-1) * 3 +1 ],
@@ -10,6 +6,10 @@ paraGetB <- function(x) {
                    xHy=x[dvd:(nRepHy-1)*3 +1],
                    nHy=x[dvd:(nRepHy-1)*3 +1] + x[dvd:(nRepHy-1)*3 +2])
 
+
+    expCis <- list(dHy=x[ (1:dvd)*3  ],
+                   xHy=x[ (0:(dvd-1))*3 +1 ],
+                   nHy=x[ (0:(dvd-1))*3 +1 ] + x[ (0:(dvd-1))*3 +2 ])
 
     fit.binom.cis <-  mle2(
         minuslogl = neglhBinomial_cisonly,

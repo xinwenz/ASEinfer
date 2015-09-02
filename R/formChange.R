@@ -1,15 +1,6 @@
 formChange <- function(hyList,dHy,coList,dCo) { #hyList=list of dataframe,dHy=vector d
-    nRepHy <<- length(hyList) # add to global evn
-    nRepCo <<- length(coList)
-    nRep <<- nRepHy+nRepCo     # add to global evn
-
-    if (nRepHy != length(dHy)) {stop("hybrid replicates is not the same number as DNA proportion measurement replicates")}
-    if (nRepCo != length(dCo)) {stop("coculture replicates is not the same number as DNA proportion measurement replicates")}
-
-
     #combine all hybrid replicate with DNA proportion
     dfHy <- hyList[[1]]
-    nGenes <<- nrow(dfHy) # add to global evn
     dfHy <- cbind(dfHy,dHy[1])
     colnames(dfHy) <- c("hyA.1","hyB.1","hyd.1")
 
