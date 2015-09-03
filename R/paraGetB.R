@@ -29,9 +29,20 @@ paraGetB <- function(x) {
 
 
     tmp1 <- coef(fit.binom.cis)
-    tmp2 <- confint(fit.binom.cis)
+
+    tmp2 <- tryCatch({
+        confint(fit.bimom.cis)
+    },error=function(e){
+        c(0,0)
+    })
+
     tmp3 <- coef(fit.binom.all)
-    tmp4 <- confint(fit.binom.all)
+
+    tmp4 <- tryCatch({
+        confint(fit.binom.all)
+    },error=function(e){
+        rbind(log.ec=c(0,0),log.et=c(0,0))
+    })
 
     c(tmp1["log.ec"],tmp2[1],tmp2[2],
       tmp3["log.et"],tmp4["log.et",1],tmp4["log.et",2])

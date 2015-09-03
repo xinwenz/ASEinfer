@@ -27,9 +27,20 @@ paraGetBB <- function(x) {
         data      = expAll)
 
     tmp1 <- coef(fit.beta.cis)
-    tmp2 <- confint(fit.beta.cis)
+
+    tmp2 <- tryCatch({
+        confint(fit.beta.cis)
+    },error=function(e){
+        rbind(log.ec=c(0,0),log.rHy=c(0,0))
+    })
+
     tmp3 <- coef(fit.beta.all)
-    tmp4 <- confint(fit.beta.all)
+
+    tmp4 <- tryCatch({
+        confint(fit.beta.all)
+    },error=function(e){
+        rbind(log.et=c(0,0),log.rCo=c(0,0))
+    })
 
     c(tmp1["log.ec"],tmp2["log.ec",1],tmp2["log.ec",2],
       tmp3["log.et"],tmp4["log.et",1],tmp4["log.et",2],
