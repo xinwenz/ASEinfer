@@ -31,7 +31,7 @@ paraGetB <- function(x) {
     tmp1 <- coef(fit.binom.cis)
 
     tmp2 <- tryCatch({
-        confint(fit.bimom.cis)
+        confint(fit.binom.cis)
     },error=function(e){
         c(0,0)
     })
