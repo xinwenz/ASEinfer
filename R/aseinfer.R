@@ -94,7 +94,7 @@ aseinfer <- function(hyList,dHy,coList,dCo,pe=3,mdl="BetaB") {
             paraGetBB(d)
         stopCluster(cl)
         row.names(ans) <- row.names(dfdf)
-        colnames(ans) <- c("log.ecis","ecis-","ecis+","log.etrans","etrans-","etans+","log.rHy","rHy-","rhy+","log.rCo","rCo-","rCo+")
+        colnames(ans) <- c("log.ecis","ecis-","ecis+","log.etrans","etrans-","etrans+","log.rHy","rHy-","rhy+","log.rCo","rCo-","rCo+")
         rm(list=c("nRepCo","nRepHy","nRep","dvd","dbetabinom","neglhbetaBinomial","neglhbetaBinomial_cisonly","nGenes"),envir=.GlobalEnv)
         return(ans)
     }
@@ -134,7 +134,7 @@ aseinfer <- function(hyList,dHy,coList,dCo,pe=3,mdl="BetaB") {
             paraGetB(d)
         stopCluster(cl)
         row.names(ans) <- row.names(dfdf)
-        colnames(ans) <- c("log.ecis","ecis-","ecis+","log.etrans","etrans-","etans+")
+        colnames(ans) <- c("log.ecis","ecis-","ecis+","log.etrans","etrans-","etrans+")
         rm(list=c("nRepHy","nRepCo","nRep","dvd","neglhBinomial","neglhBinomial_cisonly","nGenes"),envir=.GlobalEnv)
         return(ans)
     }
